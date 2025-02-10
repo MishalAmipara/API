@@ -96,6 +96,7 @@ exports.UpdateContact = async (req,res)=>{
 
 exports.DeleteContact = async (req,res)=>{
     try {
+        var id = req.params.id;
         var data = await ContactModel.findByIdAndDelete(id);
         res.status(200).json({
             status: "Success"
